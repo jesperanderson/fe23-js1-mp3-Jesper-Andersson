@@ -1,12 +1,3 @@
-// async function fetchRandomCountry() {
-//   const url = "https://restcountrfies.com/v3.1/all";
-
-//   const response = await fetch(url);
-//   const countryData = await response.json();
-
-//   console.log(countryData[0]);
-//   return countryData[0];
-// }
 const countryForm = document.getElementById("countryForm");
 const sendButton = document.getElementById("sendButton");
 // event listener för formet
