@@ -1,12 +1,12 @@
-async function fetchRandomCountry() {
-  const url = "https://restcountries.com/v3.1/all";
+// async function fetchRandomCountry() {
+//   const url = "https://restcountrfies.com/v3.1/all";
 
-  const response = await fetch(url);
-  const countryData = await response.json();
+//   const response = await fetch(url);
+//   const countryData = await response.json();
 
-  console.log(countryData[0]);
-  return countryData[0];
-}
+//   console.log(countryData[0]);
+//   return countryData[0];
+// }
 const countryForm = document.getElementById("countryForm");
 const sendButton = document.getElementById("sendButton");
 // event listener för formet
@@ -22,6 +22,8 @@ sendButton.addEventListener("click", function () {
 async function fetchCountryInfo() {
   const textInput = document.getElementById("textInput").value;
   const isCountrySelected = document.getElementById("country").checked;
+  const landInfo = document.querySelector("#landinfo");
+  landInfo.innerHTML = "";
 
   if (isCountrySelected) {
     apiUrl = `https://restcountries.com/v3.1/name/${textInput}`;
@@ -39,8 +41,7 @@ async function fetchCountryInfo() {
         }
       }
     const countryData = await response.json();
-    const landInfo = document.querySelector("#landinfo");
-    landInfo.innerHTML = "";
+    
       // Här kommer sorteringen för att de skall falla i mest population först till minst.
     if (response.ok && countryData && countryData.length > 0) {
         countryData.sort((a, b) => b.population - a.population)};
@@ -66,6 +67,6 @@ async function fetchCountryInfo() {
     console.error("Error fetching country information:", error);
     const h1 = document.createElement('h1');
     h1.innerText = error;
-    document.body.append(h1);
+    landInfo.append(h1);
   }
 }
