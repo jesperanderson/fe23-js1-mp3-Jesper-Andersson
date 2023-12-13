@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js" defer></script>
+    <title>Rest Countries</title>
+</head>
+<body>
+    <h1 id="rubrik">GET COUNTRIES</h1>
+    <p class="pinfo">Hämta information nedan genom att söka efter ett önskat land eller språk!</p>
+    <div>
+        <form id="countryForm">
+            <input type="text" placeholder="Country/Language" id="textInput">
+            <input type="radio" id="country" name="information" value="Country">
+            <label for="country">Country</label>
+            <input type="radio" id="language" name="information" value="Language">
+            <label for="language">Language</label>
+            <button type="button" id="sendButton">Send!</button>
+        </form>
+
+        <div id="landinfo">
+            <img class="countryImage">
+            <h1 class="h1Namn"></h1>
+            <p class="pSubregion"></p>
+            <p class="pHuvudstad"></p>
+            <p class="pBefolkning"></p>
+        </div>
+    </div>
+</body>
+</html>
